@@ -11,18 +11,18 @@
     import genres from '../util/genres';
     import CheckFilter from './CheckFilter.vue';
     export default {
-        data() {
-			return {
-				genres
+      data() {
+				return {
+					genres
+				}
+			},
+			methods: {
+				checkFilter(category, title, checked) {
+					this.$emit('check-filter', category, title, checked);
+				}
+			},
+			components: {
+				CheckFilter
 			}
-		},
-		methods: {
-			checkFilter(category, title, checked) {
-				this.$emit('check-filter', category, title, checked);
-			}
-		},
-		components: {
-			CheckFilter
-		}
     }
 </script>
